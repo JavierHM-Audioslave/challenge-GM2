@@ -1,0 +1,59 @@
+.main-container-light {
+  background-color: #fafafa;
+  height: 100vh;
+}
+
+.main-container-dark {
+  background-color: #202c37;
+  height: 100vh;
+}
+
+.hdDark {
+  background-color: #2b3945;
+}
+
+.hdLight {
+  background-color: #fafafa;
+}
+
+#home-flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  padding: 25px;
+}
+
+#home-flex-container .title {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 100px;
+          flex: 1 0 100px;
+}
+
+#home-flex-container .mode {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100px;
+          flex: 0 0 100px;
+}
+
+@media only screen and (min-width: 450px) {
+  header {
+    color: red;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  header {
+    color: blue;
+  }
+}
+/*# sourceMappingURL=App.css.map */

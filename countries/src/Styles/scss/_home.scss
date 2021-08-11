@@ -1,0 +1,49 @@
+.main-container-light {
+    background-color: hsl(0, 0%, 98%);
+    height: 100vh;
+}
+
+.main-container-dark {
+    background-color: hsl(207, 26%, 17%);
+    height: 100vh;
+}
+
+.hdDark {
+    background-color: hsl(209, 23%, 22%);
+}
+
+.hdLight {
+    background-color: hsl(0, 0%, 98%);
+}
+
+#home-flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row nowrap;
+    padding: 25px;
+
+    .title {
+        flex: 1 0 100px;
+    }
+
+    .mode {
+        flex: 0 0 100px;
+    }
+}
+
+
+
+@media only screen and (min-width: $sm) {
+
+    header {
+        color: red;
+    }
+}
+
+@media only screen and (min-width: $lg) {
+
+    header {
+        color: blue;
+    }
+}
