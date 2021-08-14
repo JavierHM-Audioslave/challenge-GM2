@@ -259,8 +259,8 @@ header {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -270,10 +270,11 @@ header {
   outline: red solid 1px;
 }
 
-#card-wrapper .country-card {
+.country-card {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 200px;
-          flex: 0 0 200px;
-  outline: green solid 1px;
+      -ms-flex: 0 0 379px;
+          flex: 0 0 379px;
+  min-width: 100px;
+  outline: white solid 1px;
 }
 /*# sourceMappingURL=App.css.map */

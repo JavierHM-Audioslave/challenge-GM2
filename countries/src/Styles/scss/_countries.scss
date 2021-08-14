@@ -120,13 +120,8 @@
 
 #card-wrapper {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: flex-start;
     align-items: center;
     outline: red solid 1px;
-
-    .country-card {
-        flex: 0 0 200px;
-        outline: green solid 1px;
-    }
 }

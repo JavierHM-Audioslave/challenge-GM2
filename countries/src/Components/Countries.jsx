@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { 
-    Input, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, 
-    Card, CardImg, CardBody, Cardtitle, CardSubtitle, CardText, Button 
+    Input, Dropdown, DropdownToggle, DropdownMenu, DropdownItem 
 } from "reactstrap";
 import axios from "axios";
 import CountryCard from "./CountryCard";
@@ -10,7 +9,7 @@ import CountryCard from "./CountryCard";
 const Countries = () => {
 
     const [dropdownOpen, setDropdownOpen] = useState(false);
-    const [listOfCountries, setListOfCountries] = useState();
+    const [listOfCountries, setListOfCountries] = useState(null);
 
     const toggle = () => setDropdownOpen( prevValue => !prevValue);
 
@@ -20,11 +19,9 @@ const Countries = () => {
                 const response = await axios.get("https://restcountries.eu/rest/v2/all");
                 console.log(response);
 
-                if(response.status >= 500) throw new Error("No se pueden obtener los países en este momento");
-                if(response.status !== 200 && response.status !== 204) throw new Error("Se produjo un error al intentar obtener todos los países desde la URL https://restcountries.eu/rest/v2/all");
-
                 setListOfCountries(response.data);
             } catch(error) {
+                console.log("En Countries");
                 console.error(error);
             }
         };
@@ -57,7 +54,10 @@ const Countries = () => {
                     </div>
                 </div>
             </main>
-            {listOfCountries && <CountryCard listOfCountries={listOfCountries}/>}
+            <div id="card-wrapper">
+                {listOfCountries && listOfCountries.map( country => (<CountryCard country={country}/>))}
+                {/* {listOfCountries && <CountryCard country={listOfCountries[0]} />} */}
+            </div>
         </>
     );
 };
