@@ -1,5 +1,6 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css'; 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "font-awesome/css/font-awesome.min.css";
 import { Router, Route, Switch } from "react-router-dom";
 import history from "./Helpers/history";
 import Home from "./Components/Home";

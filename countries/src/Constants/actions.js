@@ -1,0 +1,4 @@
+export const COUNTRY = {
+    GET_COUNTRIES: "GET_COUNTRIES",
+    GET_ONE_COUNTRY: "GET_ONE_COUNTRY"
+};

@@ -1,0 +1,132 @@
+
+
+.bar-options {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    // outline: blue solid 1px;
+
+    .child1, .child2 {
+        margin: 50px;
+        // outline: white solid 1px;
+    }
+
+    ::placeholder {
+        color: white;
+    }
+
+    .child1 {
+        flex: .2 1 250px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: hsl(209, 23%, 22%);
+
+        .img-search {
+            flex: 0 0 3em;
+            padding-left: 1.1em;
+            padding-bottom: .2em;
+            background-color: inherit;
+        }
+
+        .ipt-country {
+           flex: 1 1 100%;
+        //    outline: red solid 1px;
+           background-color: hsl(209, 23%, 22%);
+           color: inherit;
+           font-size: .8em;
+           border: none;
+        }
+    }
+
+    .child2 {
+        flex: .1 1 160px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+        align-items: center;
+        
+        .dropdown {
+            flex: 1 1 150px;
+            max-width: 10em;
+            background-color: hsl(209, 23%, 22%);
+
+            .dropdown-toggle {
+                color: white;
+                font-size: .7em;
+                width: 100%;
+            }
+
+            .dropdown-menu {
+                background-color: inherit;
+                font-size: .7em;
+            }
+
+            .dropdown-item {
+                color: white;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: $sm) {   // Celu
+
+    .bar-options {
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-left: 2em;
+
+        .child1, .child2 {
+            flex: 1 0 40px;
+            margin: 1.5em 0;
+        }
+
+        .child1 {
+            // outline: blue solid 1px;
+            width: 90%;
+            background-color: hsl(209, 23%, 22%);
+
+            .img-search {
+                background-color: hsl(209, 23%, 22%);
+            }
+
+            .ipt-country {
+                height: 100%;
+            }
+        }
+
+        .child2 {
+            justify-content: flex-start;
+            // outline: blue solid 1px;
+            width: 60%;
+
+            .dropdown {
+                flex: 0 0 150px;
+                // background-color: red;
+                width: 100% !important;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+#card-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    outline: red solid 1px;
+
+    .country-card {
+        flex: 0 0 200px;
+        outline: green solid 1px;
+    }
+}

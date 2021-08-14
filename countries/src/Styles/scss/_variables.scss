@@ -2,3 +2,38 @@ $sm: 450px;
 $md: 768px;
 $lg: 992px;
 $xl: 1200px;
+$xxl: 1800px;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    border: 2px solid yellow;
+    background-color: hsl(207, 26%, 17%);
+    height: 100%;
+    color: white;
+}
+
+
+
+@media only screen and (min-width: $xxl) {
+    html {
+        font-size: 200%;
+    }
+}
+
+
+
+@media only screen and (max-width: $xl) { // Note
+    html {
+        font-size: 100%;
+    }
+}
+
+@media only screen and (max-width: $sm) {   // Celular
+    html {
+        font-size: .9em;
+    }
+}

@@ -1,22 +1,25 @@
 import React from "react";
-
+import Countries from "./Countries";
 
 
 const Home = () => {
 
 
     return (
-        <div className="main-container-dark">
+        <div>
             <header className="hdDark">
                 <div id="home-flex-container">
                     <div className="title">
                         Where in the world?
                     </div>
                     <div className="mode">
-                        Dark Mode
+                        <div className="float-right">
+                            Dark Mode
+                        </div>
                     </div>
                 </div>
             </header>
+            <Countries/>
         </div>
     );
 };

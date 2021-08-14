@@ -1,19 +1,15 @@
-.main-container-light {
-    background-color: hsl(0, 0%, 98%);
-    height: 100vh;
-}
+// .main-container-light {
+//     background-color: hsl(0, 0%, 98%);
+//     height: 100vh;
+//     color: black;
+// }
 
-.main-container-dark {
-    background-color: hsl(207, 26%, 17%);
-    height: 100vh;
-}
+// .hdLight {
+//     background-color: hsl(0, 0%, 98%);
+// }
 
 .hdDark {
     background-color: hsl(209, 23%, 22%);
-}
-
-.hdLight {
-    background-color: hsl(0, 0%, 98%);
 }
 
 #home-flex-container {
@@ -24,26 +20,36 @@
     padding: 25px;
 
     .title {
-        flex: 1 0 100px;
+        flex: 1 1 auto;
     }
 
     .mode {
-        flex: 0 0 100px;
+        flex: 1 1 auto;
+
+        .float-right {
+            float: right;
+        }
     }
+
+
 }
 
 
-
-@media only screen and (min-width: $sm) {
-
-    header {
-        color: red;
-    }
+header {
+    color: white;
 }
+
 
 @media only screen and (min-width: $lg) {
 
-    header {
-        color: blue;
+    .bar-options {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+
+        .child1, child2 {
+            flex: 0 0 200px;
+        }
     }
 }
