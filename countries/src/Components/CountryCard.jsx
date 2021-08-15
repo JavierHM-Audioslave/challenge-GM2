@@ -1,33 +1,24 @@
-import React, { useState, useEffect } from "react";
-import { Card, CardImg, CardBody, Cardtitle, CardSubtitle, CardText } from "reactstrap";
-import { getFlag } from "../Services/countryService";
-import SVG from 'axios-react-inlinesvg';
+import React from "react";
+import { Card, CardImg, CardBody, CardText, CardTitle } from "reactstrap";
 
 
 const CountryCard = ({country}) => {
-
-    const [svgFlag, setSvgFlag] = useState();
-
-    useEffect(() => {
-
-        const caller = async () => {
-            try {
-                const svgFlag = await getFlag(country.flag);
-                console.log(svgFlag);
-                setSvgFlag(svgFlag);
-            } catch(error) {
-                console.error(error);
-            }
-        };
-
-        caller();
-    }, []);
      
     return (
         <>
-            {svgFlag && 
-                <div className="country-card">
-                    <SVG src={svgFlag} cacheRequests={true} />;
+            {country && 
+                <div className="card-wrapper">
+                    <Card className="card">
+                        <CardImg top width="100%" src={country.flag} alt={country.name} />
+                        <CardBody>
+                            <CardTitle tag="h6">{country.name}</CardTitle>
+                            <CardText>
+                                <div><span className="card-description">Population:</span> {country.population}</div>
+                                <div><span className="card-description">Region:</span> {country.region}</div>
+                                <div><span className="card-description">Capital:</span> {country.capital}</div>
+                            </CardText>
+                        </CardBody>
+                    </Card>
                 </div>
             }
         </>
