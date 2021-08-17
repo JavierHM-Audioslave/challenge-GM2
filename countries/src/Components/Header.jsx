@@ -2,7 +2,7 @@ import React from "react";
 import Countries from "./Countries";
 
 
-const Home = () => {
+const Header = () => {
 
 
     return (
@@ -19,10 +19,10 @@ const Home = () => {
                     </div>
                 </div>
             </header>
-            <Countries/>
+            {/* <Countries/> */}
         </div>
     );
 };
 
 
-export default Home;
+export default Header;

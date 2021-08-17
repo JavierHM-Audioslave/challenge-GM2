@@ -64,7 +64,7 @@ const Countries = () => {
                     </div>
                 </div>
             </main>
-            <div id="card-wrapper">
+            <div id="cards-content">
                 {listOfCountries && listOfCountries.map( country => (<CountryCard country={country} key={country.alpha3Code} />))}
                 {/* {listOfCountries && <CountryCard country={listOfCountries[0]} />}
                 {listOfCountries && <CountryCard country={listOfCountries[1]} />}

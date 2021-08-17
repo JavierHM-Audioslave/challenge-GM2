@@ -209,7 +209,7 @@ header {
   color: white;
 }
 
-#card-wrapper {
+#cards-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -217,9 +217,9 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -276,6 +276,7 @@ header {
           flex: 0 1 18em;
   outline: white solid 1px;
   margin: 2em;
+  cursor: pointer;
 }
 
 .card-wrapper img {
@@ -289,5 +290,9 @@ header {
 .card-wrapper .card-description {
   font-size: .7em;
   font-weight: 500;
+}
+
+.btn-back {
+  background-color: #2b3945;
 }
 /*# sourceMappingURL=App.css.map */

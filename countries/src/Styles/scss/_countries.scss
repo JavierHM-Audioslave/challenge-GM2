@@ -72,10 +72,10 @@
 }
 
 
-#card-wrapper {
+#cards-content {
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     // outline: red solid 1px;
     padding: 0 2em;
