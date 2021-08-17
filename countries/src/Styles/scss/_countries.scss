@@ -72,6 +72,16 @@
 }
 
 
+#card-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    // outline: red solid 1px;
+    padding: 0 2em;
+}
+
+
 @media only screen and (max-width: $sm) {   // Celu
 
     .bar-options {
@@ -111,18 +121,4 @@
             }
         }
     }
-}
-
-
-
-
-
-
-#card-wrapper {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: center;
-    // outline: red solid 1px;
-    padding: 0 2em;
 }

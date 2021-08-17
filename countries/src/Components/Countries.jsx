@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { 
     Input, Dropdown, DropdownToggle, DropdownMenu, DropdownItem 
 } from "reactstrap";
-import axios from "axios";
 import CountryCard from "./CountryCard";
+import { getAllCountries, getFilteredCountries } from "../Services/countryService";
 
 
 const Countries = () => {
@@ -13,13 +13,24 @@ const Countries = () => {
 
     const toggle = () => setDropdownOpen( prevValue => !prevValue);
 
+
+    const refreshCountries = async e => {
+        try {
+            const filteredCountries = await getFilteredCountries(e);
+            setListOfCountries(filteredCountries);
+        } catch(error) {
+            console.error(error);
+        }
+    };
+
+
     useEffect(() => {
         const consumeCountries = async () => {
             try {
-                const response = await axios.get("https://restcountries.eu/rest/v2/all");
-                console.log(response);
+                const arrayOfCountries = await getAllCountries();
+                console.log(arrayOfCountries);
 
-                setListOfCountries(response.data);
+                setListOfCountries(arrayOfCountries);
             } catch(error) {
                 console.log("En Countries");
                 console.error(error);
@@ -28,7 +39,6 @@ const Countries = () => {
         consumeCountries();
     }, []);
 
-    console.log(listOfCountries);
 
     return (
         <>
@@ -36,7 +46,7 @@ const Countries = () => {
                 <div className="bar-options">
                     <div className="child1">
                         <div className="img-search"><i className="fa fa-info-circle" /></div>
-                        <Input className="ipt-country" type="text" placeholder="Search for a country..."/>
+                        <Input className="ipt-country" type="text" placeholder="Search for a country..." onInput={refreshCountries} />
                     </div>
                     <div className="child2">
                         <Dropdown className="dropdown" isOpen={dropdownOpen} toggle={toggle}>
@@ -55,7 +65,7 @@ const Countries = () => {
                 </div>
             </main>
             <div id="card-wrapper">
-                {listOfCountries && listOfCountries.map( country => (<CountryCard country={country}/>))}
+                {listOfCountries && listOfCountries.map( country => (<CountryCard country={country} key={country.alpha3Code} />))}
                 {/* {listOfCountries && <CountryCard country={listOfCountries[0]} />}
                 {listOfCountries && <CountryCard country={listOfCountries[1]} />}
                 {listOfCountries && <CountryCard country={listOfCountries[2]} />}

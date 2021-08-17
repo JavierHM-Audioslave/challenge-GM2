@@ -11,11 +11,15 @@ const CountryCard = ({country}) => {
                     <Card className="card">
                         <CardImg top width="100%" src={country.flag} alt={country.name} />
                         <CardBody>
-                            <CardTitle tag="h6">{country.name}</CardTitle>
+                            <CardTitle tag="h6" className="mb-4">{country.name}</CardTitle>
                             <CardText>
-                                <div><span className="card-description">Population:</span> {country.population}</div>
-                                <div><span className="card-description">Region:</span> {country.region}</div>
-                                <div><span className="card-description">Capital:</span> {country.capital}</div>
+                                <span className="card-description">Population:</span> {country.population}
+                            </CardText>
+                            <CardText>
+                                <span className="card-description">Region:</span> {country.region}
+                            </CardText>
+                            <CardText>
+                                <span className="card-description">Capital:</span> {country.capital}
                             </CardText>
                         </CardBody>
                     </Card>
