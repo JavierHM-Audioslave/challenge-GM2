@@ -292,9 +292,12 @@ header {
   font-weight: 500;
 }
 
+#main-one-country {
+  margin: 4em;
+}
+
 .btn-back {
   background-color: #2b3945;
-  margin: 3em;
   font-weight: 10;
   border: none;
   width: 8em;
@@ -333,11 +336,105 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 2em;
+}
+
+.country-info-wrapper .child-flag {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 30em;
+          flex: 1 1 30em;
+}
+
+.country-info-wrapper .child-flag img {
+  width: 100%;
+  height: 100%;
+}
+
+.country-info-wrapper .child-info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 53em;
+          flex: 1 1 53em;
+}
+
+.country-info-wrapper .child-info .vertical-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.country-info-wrapper .child-info .vertical-wrapper .left-column {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20em;
+          flex: 0 0 20em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: end;
+}
+
+.country-info-wrapper .child-info .vertical-wrapper .left-column .highlight-name {
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.country-info-wrapper .child-info .vertical-wrapper .left-column .info:first-child {
+  margin: 2em 0;
+}
+
+.country-info-wrapper .child-info .vertical-wrapper .left-column .info {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 3em;
+          flex: 0 0 3em;
+}
+
+.country-info-wrapper .child-info .vertical-wrapper .right-column {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 18em;
+          flex: 0 0 18em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: start;
+  margin-left: 5em;
+}
+
+.country-info-wrapper .child-info .vertical-wrapper .right-column .info:first-child {
+  margin-top: 7em;
+}
+
+.country-info-wrapper .child-info .vertical-wrapper .right-column .info {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 3em;
+          flex: 0 0 3em;
 }
 /*# sourceMappingURL=App.css.map */

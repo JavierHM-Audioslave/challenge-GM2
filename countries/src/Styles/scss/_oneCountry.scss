@@ -1,6 +1,9 @@
+#main-one-country {
+    margin: 4em;
+}
+
 .btn-back {
     background-color: hsl(209, 23%, 22%);
-    margin: 3em;
     font-weight: 10;
     border: none;
     width: 8em;
@@ -21,14 +24,65 @@
 .country-info-wrapper {
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    margin-top: 2em;
 
     .child-flag {
-        
+        flex: 1 1 30em;
+
+         img {
+            width: 100%;
+            height: 100%;
+         }
     }
 
     .child-info {
+        flex: 1 1 53em;
 
+        .vertical-wrapper {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            .left-column {
+                flex: 0 0 20em;
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: space-evenly;
+                text-align: end;
+
+                .highlight-name {
+                    font-size: 2em;
+                    font-weight: 600;
+                }
+
+                .info:first-child {
+                    margin: 2em 0;
+                }
+
+                .info {
+                    flex: 0 0 3em;
+                }
+            }
+
+            .right-column {
+                flex: 0 0 18em;
+                display: flex;
+                flex-flow: column wrap;
+                justify-content: space-evenly;
+                text-align: start;
+                margin-left: 5em;
+
+                .info:first-child {
+                    margin-top: 7em;
+                }
+
+                .info {
+                    flex: 0 0 3em;
+                }
+            }
+        }
     }
 }
