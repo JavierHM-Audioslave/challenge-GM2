@@ -294,5 +294,50 @@ header {
 
 .btn-back {
   background-color: #2b3945;
+  margin: 3em;
+  font-weight: 10;
+  border: none;
+  width: 8em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btn-back .first-child {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 1em;
+          flex: 1 1 1em;
+}
+
+.btn-back .second-child {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 4em;
+          flex: 1 1 4em;
+}
+
+.country-info-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=App.css.map */

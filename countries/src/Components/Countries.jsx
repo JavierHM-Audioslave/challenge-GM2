@@ -28,7 +28,6 @@ const Countries = () => {
         const consumeCountries = async () => {
             try {
                 const arrayOfCountries = await getAllCountries();
-                console.log(arrayOfCountries);
 
                 setListOfCountries(arrayOfCountries);
             } catch(error) {
