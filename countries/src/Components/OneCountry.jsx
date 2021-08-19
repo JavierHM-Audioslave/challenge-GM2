@@ -34,7 +34,7 @@ const OneCountry = () => {
 
     return (
         <main id="main-one-country">
-            <Button className="btn-back" onClick={() => history.push("/")}>
+            <Button className="btn-back" onClick={() => history.goBack()}>
                 <div className="first-child"><i className="fas fa-arrow-left"></i></div>  
                 <div className="second-child">Back</div>
             </Button>

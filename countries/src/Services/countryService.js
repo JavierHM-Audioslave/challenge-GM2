@@ -39,6 +39,21 @@ export const getOneCountry = async countryName => {
         return response.data;
     } catch(error) {
         console.error(error);
+        throw new Error(error);
+    }
+};
+
+export const getCountriesByRegion = async region => {
+    try {
+        console.log(region);
+        const response = await axios.get(`https://restcountries.eu/rest/v2/region/${region}`);
+
+        console.log(response);
+        console.log(response.data);
+        return response.data;
+    } catch(error) {
         console.log(error);
+        console.error(error);
+        throw new Error(error);
     }
 };

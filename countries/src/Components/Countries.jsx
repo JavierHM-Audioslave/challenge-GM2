@@ -3,13 +3,18 @@ import {
     Input, Dropdown, DropdownToggle, DropdownMenu, DropdownItem 
 } from "reactstrap";
 import CountryCard from "./CountryCard";
-import { getAllCountries, getFilteredCountries } from "../Services/countryService";
+import { getAllCountries, getFilteredCountries, getCountriesByRegion } from "../Services/countryService";
+// import { getCountries } from "../Helpers/listCountriesByRegionHelper";
+import { useHistory } from "react-router-dom";
 
 
-const Countries = () => {
+const Countries = ({countries = null}) => {
 
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [listOfCountries, setListOfCountries] = useState(null);
+    const history = useHistory();
+
+    console.log(countries);
 
     const toggle = () => setDropdownOpen( prevValue => !prevValue);
 
@@ -23,11 +28,29 @@ const Countries = () => {
         }
     };
 
+    
+    const getCountries = async e => {
+        
+        const region = e.target.textContent;
+    
+        try {
+            const filteredCountriesByRegion = await getCountriesByRegion(region);
+            console.log(filteredCountriesByRegion);
+            setListOfCountries(filteredCountriesByRegion);
+        } catch(error) {
+            console.log(error);
+            console.error(error);
+        }
+    
+    };
+
 
     useEffect(() => {
         const consumeCountries = async () => {
             try {
-                const arrayOfCountries = await getAllCountries();
+                let arrayOfCountries;
+                // const arrayOfCountries = await getAllCountries();
+                !countries ? arrayOfCountries=await getAllCountries() : arrayOfCountries=await getCountries(countries);
 
                 setListOfCountries(arrayOfCountries);
             } catch(error) {
@@ -53,11 +76,11 @@ const Countries = () => {
                                 Filter by Region
                             </DropdownToggle>
                             <DropdownMenu className="dropdown-menu">
-                                <DropdownItem className="dropdown-item">Africa</DropdownItem>
-                                <DropdownItem className="dropdown-item">America</DropdownItem>
-                                <DropdownItem className="dropdown-item">Asia</DropdownItem>
-                                <DropdownItem className="dropdown-item">Europe</DropdownItem>
-                                <DropdownItem className="dropdown-item">Oceania</DropdownItem>
+                                <DropdownItem className="dropdown-item" onClick={getCountries}>Africa</DropdownItem>
+                                <DropdownItem className="dropdown-item" onClick={getCountries}>America</DropdownItem>
+                                <DropdownItem className="dropdown-item" onClick={getCountries}>Asia</DropdownItem>
+                                <DropdownItem className="dropdown-item" onClick={getCountries}>Europe</DropdownItem>
+                                <DropdownItem className="dropdown-item" onClick={getCountries}>Oceania</DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
                     </div>
@@ -65,10 +88,6 @@ const Countries = () => {
             </main>
             <div id="cards-content">
                 {listOfCountries && listOfCountries.map( country => (<CountryCard country={country} key={country.alpha3Code} />))}
-                {/* {listOfCountries && <CountryCard country={listOfCountries[0]} />}
-                {listOfCountries && <CountryCard country={listOfCountries[1]} />}
-                {listOfCountries && <CountryCard country={listOfCountries[2]} />}
-                {listOfCountries && <CountryCard country={listOfCountries[3]} />} */}
             </div>
         </>
     );
