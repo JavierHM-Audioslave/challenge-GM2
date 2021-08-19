@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { useHistory } from "react-router-dom";
 import { Button } from "reactstrap";
 import { getOneCountry } from "../Services/countryService";
 import { getElementsOfTopLevelDomain, getNamesOfCurrencies } from "../Helpers/oneCountryHelper";
@@ -10,7 +11,7 @@ const OneCountry = () => {
     const {countryName} = useParams(); // Here I'm taking the optional last part of the current URL for it to tell me the country that must be displayed. //
     console.log(countryName);
     const [countryInfo, setCountryInfo] = useState();
-
+    const history = useHistory();
 
 
     useEffect(() => {
@@ -29,13 +30,14 @@ const OneCountry = () => {
 
     console.log(countryInfo);
 
+
+
     return (
         <main id="main-one-country">
-            <Button className="btn-back">
+            <Button className="btn-back" onClick={() => history.push("/")}>
                 <div className="first-child"><i className="fas fa-arrow-left"></i></div>  
                 <div className="second-child">Back</div>
             </Button>
-            {console.log(countryInfo)}
             {countryInfo && 
                 <div className="country-info-wrapper">
                     <div className="child-flag">
