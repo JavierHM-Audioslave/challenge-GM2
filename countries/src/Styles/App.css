@@ -332,10 +332,6 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -366,10 +362,6 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -380,8 +372,8 @@ header {
 
 .country-info-wrapper .child-info .vertical-wrapper .left-column {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 20em;
-          flex: 0 0 20em;
+      -ms-flex: 0 1 18em;
+          flex: 0 1 18em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -389,10 +381,11 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
           flex-flow: column wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  text-align: end;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  text-align: start;
+  font-size: .8em;
 }
 
 .country-info-wrapper .child-info .vertical-wrapper .left-column .highlight-name {
@@ -405,15 +398,15 @@ header {
 }
 
 .country-info-wrapper .child-info .vertical-wrapper .left-column .info {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 3em;
-          flex: 0 0 3em;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 2em;
+          flex: 1 1 2em;
 }
 
 .country-info-wrapper .child-info .vertical-wrapper .right-column {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 18em;
-          flex: 0 0 18em;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 10em;
+          flex: 1 1 10em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -421,20 +414,64 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
           flex-flow: column wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   text-align: start;
-  margin-left: 5em;
-}
-
-.country-info-wrapper .child-info .vertical-wrapper .right-column .info:first-child {
-  margin-top: 7em;
+  font-size: .8em;
 }
 
 .country-info-wrapper .child-info .vertical-wrapper .right-column .info {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 3em;
-          flex: 0 0 3em;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 2em;
+          flex: 1 1 2em;
+}
+
+@media only screen and (max-width: 992px) {
+  .vertical-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+  .country-info-wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+  .child-flag {
+    height: 19em;
+  }
+  .right-column .info:first-child {
+    margin-top: 4em;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .vertical-wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+  }
+  .country-info-wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+  }
+  .child-flag {
+    height: 17em;
+  }
+  .left-column {
+    margin-left: 8em;
+  }
+  .right-column {
+    margin-left: 5em;
+  }
+  .right-column .info:first-child {
+    margin-top: 8em;
+  }
 }
 /*# sourceMappingURL=App.css.map */
