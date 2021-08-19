@@ -9,7 +9,6 @@ import { getElementsOfTopLevelDomain, getNamesOfCurrencies } from "../Helpers/on
 const OneCountry = () => {
 
     const {countryName} = useParams(); // Here I'm taking the optional last part of the current URL for it to tell me the country that must be displayed. //
-    console.log(countryName);
     const [countryInfo, setCountryInfo] = useState();
     const history = useHistory();
 
@@ -18,17 +17,14 @@ const OneCountry = () => {
         const getCountryInfo = async () => {
             try {
                 const response = await getOneCountry(countryName);
-                console.log(response);
                 setCountryInfo(response[0]);
             } catch(error) {
-                console.log(error);
                 console.error(error);
             }
         };
         getCountryInfo();
     }, []);
 
-    console.log(countryInfo);
 
 
 

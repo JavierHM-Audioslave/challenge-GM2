@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, CardImg, CardBody, CardText, CardTitle } from "reactstrap";
-import history from "../Helpers/history";
 import { useHistory } from "react-router-dom";
 
 

@@ -4,22 +4,18 @@ import {
 } from "reactstrap";
 import CountryCard from "./CountryCard";
 import { getAllCountries, getFilteredCountries, getCountriesByRegion } from "../Services/countryService";
-// import { getCountries } from "../Helpers/listCountriesByRegionHelper";
-import { useHistory } from "react-router-dom";
 
 
-const Countries = ({countries = null}) => {
+const Countries = () => {
 
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [listOfCountries, setListOfCountries] = useState(null);
-    const history = useHistory();
 
-    console.log(countries);
 
     const toggle = () => setDropdownOpen( prevValue => !prevValue);
 
 
-    const refreshCountries = async e => {
+    const refreshCountries = async e => {   // Sets a state with all the countries whose name accomply to the pattern written by the user. //
         try {
             const filteredCountries = await getFilteredCountries(e);
             setListOfCountries(filteredCountries);
@@ -29,16 +25,15 @@ const Countries = ({countries = null}) => {
     };
 
     
-    const getCountries = async e => {
+    const getCountries = async e => {   // Sets a state with all the countries belonging to a certain region. //
         
-        const region = e.target.textContent;
+        let region = e.target.textContent;
+        if(region === "America") region = "Americas";   // This fix must be made in order to complete the path with the expected value for american continent. //
     
         try {
             const filteredCountriesByRegion = await getCountriesByRegion(region);
-            console.log(filteredCountriesByRegion);
             setListOfCountries(filteredCountriesByRegion);
         } catch(error) {
-            console.log(error);
             console.error(error);
         }
     
@@ -48,18 +43,16 @@ const Countries = ({countries = null}) => {
     useEffect(() => {
         const consumeCountries = async () => {
             try {
-                let arrayOfCountries;
-                // const arrayOfCountries = await getAllCountries();
-                !countries ? arrayOfCountries=await getAllCountries() : arrayOfCountries=await getCountries(countries);
+                const arrayOfCountries = await getAllCountries();
 
                 setListOfCountries(arrayOfCountries);
             } catch(error) {
-                console.log("En Countries");
                 console.error(error);
             }
         };
         consumeCountries();
     }, []);
+
 
 
     return (
